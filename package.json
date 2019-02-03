@@ -1,11 +1,12 @@
 {
   "name": "browserstack-capabilities",
-  "version": "0.3.0",
+  "version": "0.7.0",
   "description": "An easier way to generate multiple capabilities based on JSON filters.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "preversion": "npm test",
+    "lint": "eslint .",
+    "preversion": "npm run lint && npm test",
     "version": "git add -u",
     "postversion": "git push --no-verify && git push --tags --no-verify && npm publish"
   },
@@ -20,17 +21,19 @@
     "testing"
   ],
   "author": "Kevin Lamping",
+  "maintainers": ["Kevin Lamping", "Timothy Boyce"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/klamping/browserstack-capabilities/issues"
   },
   "homepage": "https://github.com/klamping/browserstack-capabilities#readme",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.11",
     "sync-request": "^4.0.1"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "eslint": "^5.12.1",
+    "mocha": "^5.2.0"
   }
 }
